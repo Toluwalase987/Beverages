@@ -1,0 +1,27 @@
+.reset {
+  padding: 4rem 8rem;
+  margin: 14rem 25rem;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.other-links {
+  display: flex;
+  align-items: center;
+  gap: 7rem;
+}
+.change {
+  font-size: 16px;
+  font-weight: 300;
+  color: #9ca3af;
+}
+
+.reset h2 {
+  margin-bottom: 3rem;
+  margin-top: -3rem;
+  border-bottom: 1px solid #d1d5db;
+  width: 100%;
+  text-align: center;
+}

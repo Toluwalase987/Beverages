@@ -1,0 +1,13 @@
+{
+    "categories": [
+        {"id": 1, "title": "Bigi"},
+        {"id": 2, "title": "Kunu"},
+        {"id": 3, "title": "Fura"},
+        {"id": 4, "title": "Zobo"}
+    ],
+    "products": [
+        {"id": 1, "catId": "1", "title": "Bigi Cola"},
+        {"id": 2, "catId": "1", "title": "Kunu Zaki"}
+        
+    ]
+}

@@ -1,0 +1,143 @@
+.sign-in {
+  padding: 4rem 5rem; 
+  margin: 10rem 25rem;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.sign-in h2{
+  margin-bottom: 2rem;
+  margin-top: -3rem;
+  border-bottom: 1px solid #d1d5db; 
+  width: 100%;
+  text-align: center;
+}
+.sign-in h6{
+  font-weight: 300;
+  font-size: 15px;
+  color: #a1a1aa;
+}
+
+.signIn-form { 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  /* border: 1px solid red; */
+  width: 100%;
+}
+.signIn-form label {
+  color: #333;
+  font-size: 15px;
+  align-self: flex-start;
+  margin-bottom: -1px;
+}
+.signIn-form input {
+  padding: 0.4rem 1rem;
+  border-radius: 5px;
+  width: 23rem;
+  border: 1px solid #9ca3af;
+}
+.signIn-form input::placeholder{
+  color: #d1d5db;
+}
+.signIn-form input:focus {
+  outline: none;
+}
+.signIn-form button {
+  padding: 0.5rem 3rem;
+  border-radius: 5px;
+  border: none;
+  background-color: #6366f1; 
+  color: #fff;
+}
+.signIn-form button:hover {
+  box-shadow: 0 5px 5px #333;
+}
+.signIn-form button:disabled:hover{
+  box-shadow: none;
+}
+.signIn-form button:active {
+  box-shadow: 0 2px 5px #333;
+}
+.signIn-form p {
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+.signIn-div{
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+.password-toggle {
+  position: absolute;
+  right: 1rem;
+  cursor: pointer;
+}
+.reset-link{
+  display: flex;
+  align-self: end;
+  font-size: 14px;
+  margin-right: 3.5rem;
+  margin-top: -1rem;
+}
+.google,
+.apple {
+  padding: 0.9rem 1rem 0.1rem;
+  cursor: pointer;
+  border: 1px solid #d1d5db;
+  width: 15rem;
+  border-radius: 5px;
+}
+.google:hover,
+.apple:hover {
+  background-color: #a1a1aa;
+}
+
+.signin-link {
+  margin-top: 2rem;
+  font-size: 17px;
+  color: #dc2626;
+  font-weight: 500;
+  cursor: pointer;
+}
+.signin-link:hover {
+  color: #dc2626;
+}
+
+.spinning-loader{
+  border: 1rem solid rgba(0, 0, 0, 0.1);
+  border-top: 1rem solid #0077cc;
+  border-radius: 50%;
+  width: 1px;
+  height: 1px;
+  animation: spin 2s linear infinite;
+}
+@keyframes spin {
+  0% {
+      transform: rotate(0deg);
+  }
+  100% {
+      transform: rotate(360deg);
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .sign-in {
+    padding: 4rem 1rem; 
+    margin: auto;
+    margin-top: 10rem;
+    width: 22rem;
+  }
+  .signIn-form input {
+    width: 20rem;
+  }
+  .reset-link{
+    margin-right: 1rem;
+  }
+}

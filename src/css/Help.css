@@ -1,0 +1,29 @@
+.help{
+    margin-top: 8rem;
+    padding: 4rem 8rem;
+    font-family: 'Ubuntu';
+}
+
+.help-content{
+    text-align: center;
+    background-color: #fff;
+    padding: 2rem 3rem;
+}
+.help-content h4{
+    text-decoration: underline;
+}
+.help-content h5:not(:last-child){
+    margin-top: 2rem;
+}
+.help-content p{
+    color: #7c2d12;
+}
+.help-link{
+    font-size: 20px;
+}
+
+@media screen and (max-width: 500px) {
+    .help{
+        padding: 0 2rem;
+    }
+}

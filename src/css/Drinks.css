@@ -1,0 +1,150 @@
+.drinks{
+    margin-top: 6rem;
+    padding: 4rem 4rem;
+    /* background-color: red; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+}
+
+.column1{
+    flex: 0 0 70%;
+    padding: 2rem;
+    background-color: #fff;
+    display: flex;
+    gap: 4rem;
+}
+.column1-left{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+.column1-left h5{
+    font-weight: 400;
+    font-family: 'Inter';
+    margin-bottom: -7px;
+}
+.main-drink{
+    width: 19rem;
+    height: 20rem;
+    border: 0.3px solid #d6d3d1;
+}
+.main-drink img{
+    width: 100%;
+    height: 100%;
+}
+.small{
+    display: flex;
+    gap: 1rem;
+}
+.smaller-drinks{
+    width: 3rem;
+    height: 3rem;
+    border: 1px solid #d6d3d1;
+    display: flex;
+}
+.smaller-drinks img{
+    width: 100%;
+    height: 100%;
+    transform: scale(1);
+    transition: all .2s;
+    cursor: pointer;
+}
+.smaller-drinks img:hover{
+    transform: scale(1.1);
+    border: 1.5px solid #333;
+}
+.column1-right{
+    display: flex;
+    flex-direction: column;
+}
+.column1-right h4{
+    font-size: 17px;
+    font-weight: 400;
+    margin-bottom: 2px;
+}
+.price{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    border-top: 0.3px solid #d6d3d1;
+    padding-top: 1.5rem;
+    margin-bottom: 0.7rem;
+}
+.price h5{
+    color: grey;
+    text-decoration: line-through;
+    font-weight: 400;
+}
+.price h6{
+    color: #fb923c;
+    font-weight: 300;
+}
+
+.found{
+    margin-top: 10rem;
+}
+.column1-right button{ 
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 10px;
+    text-transform: uppercase;
+    background-color: #6366f1;
+    color: #fff;
+    cursor: pointer;
+    transition: all .3s;
+}
+.column1-right button:hover{
+    box-shadow: 0 5px 5px #333; 
+}
+.column1-right button:active{
+    box-shadow: 0 2px 5px #333;
+}
+.column2{
+    flex: 1;
+    padding: 1rem 3rem;
+    background-color: #fff;
+    text-align: left;
+}
+.column2 h5{
+    text-transform: uppercase;
+    font-size: 15px;
+    font-weight: 400;
+    border-bottom: 0.3px solid #d6d3d1;
+    padding-bottom: 0.4rem;
+}
+.column2 h6{
+    font-size: 15px;
+    font-weight: 400;
+}
+.column2 p{
+    margin-bottom: -1px;
+    font-size: 13px;
+}
+.state{
+    width: 13rem;
+    height: 2rem;
+    border: 1px solid red;
+    margin-bottom: 1rem;
+}
+.area{
+    width: 13rem;
+    height: 2rem;
+    border: 1px solid red;
+    margin-bottom: 2rem;
+}
+
+.delivery-details{
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+.delivery-icon{
+    border: 1px solid gray;
+    height: 2.3rem;
+    padding: 2px 6px ;
+}
+.icon{
+    font-size: 2rem;
+}
