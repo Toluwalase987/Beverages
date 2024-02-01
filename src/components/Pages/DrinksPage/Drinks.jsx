@@ -2,8 +2,12 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import drinksData from "../../data/drinksdata";
 import "../../../css/Drinks.css";
+import { FaPlus, FaMinus } from "react-icons/fa6";
+import { useDispatch } from "react-redux";
+import { addItem } from "../../redux/slice/cartSlice";
 
 export default function Drinks() {
+  const dispatch = useDispatch()
   const { brandName } = useParams();
   const [isLoading, setIsLoading] = useState(true);
   const drinks = drinksData.find((drink) => drink.brandName === brandName);
@@ -18,13 +22,27 @@ export default function Drinks() {
     brand,
     currentPrice,
     formerPrice,
+    quantity,
     discount,
     similarDrinks,
   } = drinks;
 
+  const [quantities, setQuatity] = useState(quantity)
+
+  function addToCart(){
+    const newItem = {
+      title: brandName,
+      price: currentPrice,
+      image,
+      qtyInCart: quantities,
+    }
+    dispatch(addItem(newItem))
+  }
+
+
   useEffect(() => {
     // An array of image URLs
-    const imageUrls = drinksData.map((drinks)=> drinks.image);
+    const imageUrls = drinksData.map((drinks) => drinks.image);
 
     const loadImages = async () => {
       // Create an array of image loading promises
@@ -79,11 +97,38 @@ export default function Drinks() {
                 <h5>&#8358; {formerPrice}</h5>
                 <h6>
                   {currentPrice > formerPrice
-                    ? Math.floor(((currentPrice - formerPrice) / formerPrice) * 100)
-                    : Math.floor(((formerPrice - currentPrice) / formerPrice) * 100)}%
+                    ? Math.floor(
+                        (+(currentPrice - formerPrice) / formerPrice) * 100
+                      )
+                    : Math.floor(
+                        (-(formerPrice - currentPrice) / formerPrice) * 100
+                      )}
+                  %
                 </h6>
+                <span>
+                  <p>
+                    {formerPrice > currentPrice
+                      ? `You save ₦${
+                          formerPrice - currentPrice
+                        } on this purchase`
+                      : `Enjoy the refreshing ${brandName} for ₦${
+                          currentPrice - formerPrice
+                        } more`}
+                  </p>
+                </span>
               </div>
-              <button>Add to cart</button>
+              <div className="below">
+                <div className="below-quantity">
+                  <button className="qty-btn" onClick={()=> setQuatity(quantities - 1)} disabled={quantities <= 1}>
+                    <FaMinus />
+                  </button>
+                  <p>{quantities}</p>
+                  <button className="qty-btn" onClick={()=> setQuatity(quantities + 1)}>
+                    <FaPlus />
+                  </button>
+                </div>
+                <button className="below-btn" onClick={addToCart}>Add to cart</button>
+              </div>
             </div>
           </div>
         </div>

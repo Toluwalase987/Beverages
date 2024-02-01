@@ -14,13 +14,16 @@ import { ToastContainer, toast } from "react-toastify";
 import { auth } from "../firebase/config";
 import "react-toastify/dist/ReactToastify.css";
 import logo from "../img/logo.jpeg"
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { REMOVE_ACTIVE_USER, SET_ACTIVE_USER } from "./redux/slice/authSlice";
+import { getTotalCartQuantity } from "./redux/slice/cartSlice";
 
 export default function Header({ username, setUsername }) {
   const dispatch = useDispatch();
   const [isSignedIn, setIsSignedIn] = useState();
   const navigate = useNavigate();
+
+  const totalCartQuantity = useSelector(getTotalCartQuantity)
 
   function cart() {
     navigate("/cart");
@@ -39,7 +42,7 @@ export default function Header({ username, setUsername }) {
         navigate("/");
       })
       .catch((error) => {
-        toast.error("Sign Out Failed");
+        toast.error("Sign Out Failed"); 
       });
   }
 
@@ -155,7 +158,7 @@ export default function Header({ username, setUsername }) {
               <AiOutlineShoppingCart className="header-icons"/>
               <span className="header-text">Cart</span>
             </button>
-            <span className="cartnum">7</span>
+            <span className="cartnum">{totalCartQuantity}</span>
           </div>
         </div>
       </nav>

@@ -32,9 +32,9 @@ const drinksData = [
       image: bigicola,
       description: "Mouthwatering Perfection Starts With Originality In Taste. Bigi Cola Is Our Carbonated Drink With The Popular Cola Signature Taste. This Cola Drink Has A Sure Refreshing Taste Like None Other.Impress With Style When You Refresh With Mr. Cool!",
       brand: "Bigi",
-      currentPrice: "200",
-      formerPrice: "150",
-      discount: "+33%",
+      currentPrice: 200,
+      formerPrice: 150,
+      quantity: 1,
       similarDrinks: [bigiapple, bigitropical, bigilemon, bigiginger]
     },
     {
@@ -44,9 +44,9 @@ const drinksData = [
       image: fura4,
       description: "Mouthwatering Perfection Starts With Originality In Taste. Fura Is Our Traditional Beverage With The Popular Yoghurt Signature Taste. This Drink Has A Sure Refreshing Taste Like None Other.Impress With Style When You Refresh With Fura Da Nono!",
       brand: "Naija's Beverages",
-      currentPrice: "500",
-      formerPrice: "550",
-      discount: "-33%",
+      currentPrice: 500,
+      formerPrice: 550,
+      quantity: 1,
       similarDrinks: [fura2, fura3, fura1, fura5]
     },
     {
@@ -55,10 +55,10 @@ const drinksData = [
       coverPhoto: kunuImg,
       image: kunu6,
       description: "Mouthwatering Perfection Starts With Originality In Taste. Kunun Zaki Is Our Northern Local Drink With The Popular Millet Signature Taste. This Beverage Has A Sure Refreshing Taste Like None Other.Impress With Style When You Refresh With Kunun Zaki!",
-      brand: "Naija's Beverages",
-      currentPrice: "200",
-      formerPrice: "150",
-      discount: "+33%",
+      brand: "Naija's Beverages", 
+      currentPrice: 200,
+      formerPrice: 150,
+      quantity: 1,
       similarDrinks: [kunu2, kunu1, kunu5, kunu4]
     },
     {
@@ -68,9 +68,9 @@ const drinksData = [
       image: zobo6,
       description: "Mouthwatering Perfection Starts With Originality In Taste. Zobo Is Our Local Beverage With The Popular Hibiscus Signature Taste. This Drink Has A Sure Refreshing Taste Like None Other.Impress With Style When You Refresh With Zobo!",
       brand: "Dovel",
-      currentPrice: "400",
-      formerPrice: "450",
-      discount: "-33%",
+      currentPrice: 400,
+      formerPrice: 450,
+      quantity: 1,
       similarDrinks: [zobo2, zobo3, zobo7, zobo1]
     }
   ]
