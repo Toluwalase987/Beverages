@@ -32,8 +32,9 @@ export default function Drinks() {
   function addToCart(){
     const newItem = {
       title: brandName,
-      price: currentPrice,
       image,
+      price: currentPrice * 1,
+      currentPrice,
       qtyInCart: quantities,
     }
     dispatch(addItem(newItem))

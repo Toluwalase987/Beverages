@@ -129,6 +129,7 @@
     justify-content: space-between;
     border-bottom: 1px solid #d4d4d8;
 }
+
 .summary h4{
     text-transform: uppercase;
     font-weight: 400;
@@ -146,6 +147,7 @@
     background-color: #1d4ed8;
     color: white;
 }
+
 
 @media screen and (max-width: 500px) {
     .cart{

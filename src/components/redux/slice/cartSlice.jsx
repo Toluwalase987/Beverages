@@ -19,19 +19,19 @@ const cartSlice = createSlice({
       });
     },
     increaseQuantity(state, action) {
-      const item = state.cart.find((item) => {
-        item.title === action.payload;
-      });
-      item.quantity++;
-      item.totalPrice = item.quantity * item.price;
-    },
-    decreaseQuantity(state, action) {
-      const item = state.cart.find((item) => {
-        item.id === action.payload;
-      });
-      item.quantity--;
-      item.totalPrice = item.quantity * item.price;
-    },
+        const item = state.cart.find((item) => item.title === action.payload);
+        if (item) {
+          item.qtyInCart++;
+          item.price = item.currentPrice * item.qtyInCart;
+        }
+      },
+      decreaseQuantity(state, action) {
+        const item = state.cart.find((item) => item.title === action.payload);
+        if (item && item.qtyInCart > 0) {
+          item.qtyInCart--;
+          item.price = item.currentPrice * item.qtyInCart;
+        }
+      },      
     clearCart(state, action) {
         state.cart = []
     },
