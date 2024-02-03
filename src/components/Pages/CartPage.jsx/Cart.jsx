@@ -45,7 +45,7 @@ export default function Cart() {
         <div className="something2">
           <div className="fullcart">
             {cart.map((cart, index) => {
-              const { title, price, image, qtyInCart } = cart;
+              const { title, price, image, qtyInCart, currentPrice } = cart;
 
               return (
                 <div key={index}>
@@ -55,7 +55,7 @@ export default function Cart() {
                         <img src={image} alt="" />
                       </div>
                       <h4>{title}</h4>
-                      <h5>₦{price.toLocaleString()}</h5>
+                      <h5>₦{currentPrice.toLocaleString()}</h5>
                       <div className="fullcart-btn">
                         <button
                           onClick={() => dispatch(decreaseQuantity(title))}
