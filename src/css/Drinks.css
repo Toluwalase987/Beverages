@@ -28,7 +28,7 @@
 .main-drink{
     width: 30rem;
     height: 30rem;
-    border: 0.3px solid #d6d3d1;
+    /* border: 0.3px solid #d6d3d1; */
 }
 .main-drink img{
     width: 100%;
@@ -58,11 +58,18 @@
 .column1-right{
     display: flex;
     flex-direction: column;
+    /* border: 1px solid red; */
+    /* justify-content: center; */
+    align-items: center;
+}
+.column1-right h2{
+    align-self: self-start;
 }
 .column1-right h4{
     font-size: 17px;
     font-weight: 400;
     margin-bottom: 2px; 
+    align-self: self-start;
 }
 .price{
     display: flex;
@@ -100,22 +107,6 @@
 .found{
     margin-top: 10rem;
 }
-/* .column1-right button{ 
-    padding: 0.5rem 1rem;
-    border: none;
-    border-radius: 10px;
-    text-transform: uppercase;
-    background-color: #6366f1;
-    color: #fff;
-    cursor: pointer;
-    transition: all .3s;
-} */
-.column1-right button:hover{
-    box-shadow: 0 5px 5px #333; 
-}
-.column1-right button:active{
-    box-shadow: 0 2px 5px #333;
-}
 .below{
     display: flex;
     gap: 3rem;
@@ -134,14 +125,19 @@
     color: #fff;
     cursor: pointer;
     transition: all .3s;
+    width: 35rem;
+    /* background-color: #000; */
 }
 .qty-btn{
     border: none;
-    background-color: #333;
+    background-color: #6366f1;
     color: #fff;
-    padding: 1.4rem 1rem;
-    /* padding-bottom: 0.3rem; */
+    padding: 1.4rem 1.5rem;
     border-radius: 5px;
+}
+.qty-btn:disabled{
+    box-shadow: none;
+    background-color: #a5b4fc;
 }
 .below p{
     margin-top: 1rem;

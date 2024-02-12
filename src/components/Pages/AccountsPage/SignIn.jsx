@@ -22,7 +22,7 @@ export default function SignIn({ updateUsername }) {
     userRef.current.focus();
   }, []);
 
-  function togglePasswordVisibility() {
+  function togglePasswordVisibility() { 
     setShowPassword(!showPassword);
   }
 

@@ -5,11 +5,13 @@ import { useNavigate } from "react-router-dom";
 import { FaTrashAlt } from "react-icons/fa";
 import { FaPlus, FaMinus } from "react-icons/fa6";
 import { useDispatch, useSelector } from "react-redux";
+import { ToastContainer, toast } from "react-toastify";
 import {
   clearCart,
   decreaseQuantity,
   deleteItem,
   getCart,
+  getQuantity,
   getTotalCartPrice,
   increaseQuantity,
 } from "../../redux/slice/cartSlice";
@@ -20,6 +22,8 @@ export default function Cart() {
   const price = useSelector(getTotalCartPrice);
   console.log(cart);
   const dispatch = useDispatch();
+  // const quantity = useSelector(getQuantity)
+  // console.log(quantity);
 
   function drinks() {
     const drinksRoute = "/drinks";
@@ -28,6 +32,7 @@ export default function Cart() {
 
   return (
     <>
+      <ToastContainer />
       {cart.length === 0 ? (
         <div className="cart">
           <div className="cart-content">
@@ -45,7 +50,7 @@ export default function Cart() {
         <div className="something2">
           <div className="fullcart">
             {cart.map((cart, index) => {
-              const { title, price, image, qtyInCart, currentPrice } = cart;
+              const { title, price, quantity, image, currentPrice } = cart;
 
               return (
                 <div key={index}>
@@ -58,13 +63,24 @@ export default function Cart() {
                       <h5>₦{currentPrice.toLocaleString()}</h5>
                       <div className="fullcart-btn">
                         <button
-                          onClick={() => dispatch(decreaseQuantity(title))}
+                          onClick={() => {
+                            if (quantity < 2) {
+                              dispatch(deleteItem(title));
+                              toast.success("Product Successfully removed");
+                            } else {
+                              dispatch(decreaseQuantity(title));
+                              toast.success("Product quantity updated");
+                            }
+                          }}
                         >
                           <FaMinus />
                         </button>
-                        <p>{qtyInCart}</p>
+                        <p>{quantity}</p>
                         <button
-                          onClick={() => dispatch(increaseQuantity(title))}
+                          onClick={() => {
+                            dispatch(increaseQuantity(title));
+                            toast.success("Product quantity updated");
+                          }}
                         >
                           <FaPlus />
                         </button>
@@ -72,7 +88,10 @@ export default function Cart() {
                     </div>
                     <div
                       className="fullcart-right"
-                      onClick={() => dispatch(deleteItem(title))}
+                      onClick={() => {
+                        dispatch(deleteItem(title));
+                        toast.success("Product Successfully removed");
+                      }}
                     >
                       <p>
                         Remove <FaTrashAlt />

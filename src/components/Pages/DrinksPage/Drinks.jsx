@@ -1,16 +1,32 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import drinksData from "../../data/drinksdata";
 import "../../../css/Drinks.css";
 import { FaPlus, FaMinus } from "react-icons/fa6";
-import { useDispatch } from "react-redux";
-import { addItem } from "../../redux/slice/cartSlice";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  addItem,
+  decreaseQuantity,
+  deleteItem,
+  getAddedStatus,
+  getCart,
+  getQuantity,
+  increaseQuantity,
+} from "../../redux/slice/cartSlice";
+import { ToastContainer, toast } from "react-toastify";
 
 export default function Drinks() {
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
+  const navigate = useNavigate()
   const { brandName } = useParams();
   const [isLoading, setIsLoading] = useState(true);
+  const cart = useSelector(getCart);
   const drinks = drinksData.find((drink) => drink.brandName === brandName);
+  const quantity = useSelector(getQuantity);
+  const addedStatus = useSelector(getAddedStatus)
+  console.log(cart, addedStatus);
+  // console.log(drinks);
+
 
   if (!drinks) {
     return <div className="found">Drink not found</div>;
@@ -22,24 +38,30 @@ export default function Drinks() {
     brand,
     currentPrice,
     formerPrice,
-    quantity,
     discount,
     similarDrinks,
   } = drinks;
 
-  const [quantities, setQuatity] = useState(quantity)
-
-  function addToCart(){
-    const newItem = {
-      title: brandName,
-      image,
-      price: currentPrice * 1,
-      currentPrice,
-      qtyInCart: quantities,
+  function addToCart() {
+    try {
+      const newItem = {
+        title: brandName,
+        image,
+        price: currentPrice * 1,
+        currentPrice,
+        quantity,
+      };
+      dispatch(addItem(newItem));
+      toast.success("Product Successfully Added");
+    } catch (error) {
+      toast.error("Failed to add product");
     }
-    dispatch(addItem(newItem))
   }
 
+  function navigateToSimilarDrink(name) {
+    navigate(`/drinks/${name}`);
+    console.log("Clicked");
+  }
 
   useEffect(() => {
     // An array of image URLs
@@ -68,6 +90,7 @@ export default function Drinks() {
 
   return (
     <div className="medium-container">
+      <ToastContainer />
       {isLoading ? (
         <div className="loading-spinner"></div>
       ) : (
@@ -81,7 +104,7 @@ export default function Drinks() {
               <div className="small">
                 {similarDrinks.map((image, index) => {
                   return (
-                    <div className="smaller-drinks" key={index}>
+                    <div className="smaller-drinks" key={index} onClick={() => navigateToSimilarDrink(name)}>
                       <img src={image} alt="" />
                     </div>
                   );
@@ -92,7 +115,6 @@ export default function Drinks() {
               <h2>{brandName}</h2>
               <p>{description}</p>
               <h4>Brand: {brand}</h4>
-              {/* <hr /> */}
               <div className="price">
                 <h3>&#8358; {currentPrice}</h3>
                 <h5>&#8358; {formerPrice}</h5>
@@ -119,16 +141,45 @@ export default function Drinks() {
                 </span>
               </div>
               <div className="below">
-                <div className="below-quantity">
-                  <button className="qty-btn" onClick={()=> setQuatity(quantities - 1)} disabled={quantities <= 1}>
-                    <FaMinus />
+                {addedStatus ? (
+                  <div>
+                    {cart.map((cart, index) => {
+                      const { quantity, title } = cart;
+
+                      return (
+                        <div className="below-quantity" key={index}>
+                          <button
+                            className="qty-btn"
+                            onClick={() => {
+                              if (quantity < 2) {
+                                dispatch(deleteItem(title));
+                                toast.success("Product Successfully removed");
+                              } else {
+                                dispatch(decreaseQuantity(title));
+                              }
+                            }}
+                          >
+                            <FaMinus />
+                          </button>
+                          <p>{quantity}</p>
+                          <button
+                            className="qty-btn"
+                            onClick={() => {
+                              dispatch(increaseQuantity(title));
+                              toast.success("Product quantity updated");
+                            }}
+                          >
+                            <FaPlus />
+                          </button>
+                        </div>
+                      );
+                    })}
+                  </div>
+                ) : (
+                  <button className="below-btn" onClick={addToCart}>
+                    Add to cart
                   </button>
-                  <p>{quantities}</p>
-                  <button className="qty-btn" onClick={()=> setQuatity(quantities + 1)}>
-                    <FaPlus />
-                  </button>
-                </div>
-                <button className="below-btn" onClick={addToCart}>Add to cart</button>
+                )}
               </div>
             </div>
           </div>

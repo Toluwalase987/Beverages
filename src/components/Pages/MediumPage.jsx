@@ -38,7 +38,7 @@ export default function MediumPage() {
   }
 
   return (
-    <div className="medium-container">
+    <div className="medium-container"> 
       {isLoading ? (
         <div className="loading-spinner"></div>
       ) : (

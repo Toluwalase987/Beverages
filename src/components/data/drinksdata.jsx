@@ -14,7 +14,7 @@ import kunu4 from "../../img/kunu5.jpg";
 import kunu5 from "../../img/kunu8.jpeg";
 import kunu6 from "../../img/kunu7.webp";
 import zobo1 from "../../img/zobo1.jpg";
-import zobo2 from "../../img/zobo2.jpg";
+import zobo2 from "../../img/zobo2.jpg"; 
 import zobo3 from "../../img/zobo3.jpg";
 import zobo6 from "../../img/zobo6.jpg";
 import zobo7 from "../../img/zobo6.jpeg";
@@ -34,7 +34,6 @@ const drinksData = [
       brand: "Bigi",
       currentPrice: 200,
       formerPrice: 150,
-      quantity: 1,
       similarDrinks: [bigiapple, bigitropical, bigilemon, bigiginger]
     },
     {
@@ -46,7 +45,6 @@ const drinksData = [
       brand: "Naija's Beverages",
       currentPrice: 500,
       formerPrice: 550,
-      quantity: 1,
       similarDrinks: [fura2, fura3, fura1, fura5]
     },
     {
@@ -58,7 +56,6 @@ const drinksData = [
       brand: "Naija's Beverages", 
       currentPrice: 200,
       formerPrice: 150,
-      quantity: 1,
       similarDrinks: [kunu2, kunu1, kunu5, kunu4]
     },
     {
@@ -70,7 +67,6 @@ const drinksData = [
       brand: "Dovel",
       currentPrice: 400,
       formerPrice: 450,
-      quantity: 1,
       similarDrinks: [zobo2, zobo3, zobo7, zobo1]
     }
   ]
