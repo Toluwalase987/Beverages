@@ -34,7 +34,7 @@ export default function MediumPage() {
 
  
   function drinks(brandName){
-    navigate(`/drinks/${brandName}`)
+    navigate(`/drinks/${brandName}`) 
   }
 
   return (

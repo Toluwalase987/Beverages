@@ -34,7 +34,40 @@ const drinksData = [
       brand: "Bigi",
       currentPrice: 200,
       formerPrice: 150,
-      similarDrinks: [bigiapple, bigitropical, bigilemon, bigiginger]
+      similarDrinks: [
+        {name: "Bigi Apple",
+        image: bigiapple,
+        description: "Mouthwatering Perfection Starts With Originality In Taste. Bigi Cola Is Our Carbonated Drink With The Popular Cola Signature Taste. This Cola Drink Has A Sure Refreshing Taste Like None Other.Impress With Style When You Refresh With Mr. Cool!",
+        brand: "Bigi",
+        currentPrice: 200,
+        formerPrice: 150,
+        similarDrinks: [bigicola, bigitropical, bigilemon, bigiginger]
+      }, 
+      {name: "Bigi Tropical",
+      image: bigitropical,
+      description: "Mouthwatering Perfection Starts With Originality In Taste. Bigi Cola Is Our Carbonated Drink With The Popular Cola Signature Taste. This Cola Drink Has A Sure Refreshing Taste Like None Other.Impress With Style When You Refresh With Mr. Cool!",
+      brand: "Bigi",
+      currentPrice: 200,
+      formerPrice: 150,
+      similarDrinks: [bigicola, bigiapple, bigilemon, bigiginger]
+    }, 
+      {name: "Bigi Lemon",
+      image: bigilemon,
+      description: "Mouthwatering Perfection Starts With Originality In Taste. Bigi Cola Is Our Carbonated Drink With The Popular Cola Signature Taste. This Cola Drink Has A Sure Refreshing Taste Like None Other.Impress With Style When You Refresh With Mr. Cool!",
+      brand: "Bigi",
+      currentPrice: 200,
+      formerPrice: 150,
+      similarDrinks: [bigicola, bigiapple, bigitropical, bigiginger]
+    }, 
+      {name: "Bigi Ginger",
+      image: bigiginger,
+      description: "Mouthwatering Perfection Starts With Originality In Taste. Bigi Cola Is Our Carbonated Drink With The Popular Cola Signature Taste. This Cola Drink Has A Sure Refreshing Taste Like None Other.Impress With Style When You Refresh With Mr. Cool!",
+      brand: "Bigi",
+      currentPrice: 200,
+      formerPrice: 150,
+      similarDrinks: [bigicola, bigiapple, bigitropical, bigilemon]
+    }
+      ]
     },
     {
       brandName: "Fura Da Nono",

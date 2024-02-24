@@ -14,6 +14,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Reviews from "./components/Pages/Homepage/Reviews";
 import Footer from "./components/Footer";
 import "../src/App.css";
+import Others from "./components/Pages/DrinksPage/Others";
 
 export default function App() {
   const [username, setUsername] = useState(""); 
@@ -38,6 +39,7 @@ export default function App() {
           />
           <Route path="/drinks" element={<MediumPage/>}/>
           <Route path="/drinks/:brandName" element={<Drinks/>}/>
+          {/* <Route path="/drinks/:name" element={<Others/>}/> */}
           <Route path="/help" element={<Help/>}/>
           <Route path="/cart" element={<Cart/>}/>
           <Route path="/signIn" element={<SignIn updateUsername={updateUsername} username={username} setUsername={setUsername}/>}/>

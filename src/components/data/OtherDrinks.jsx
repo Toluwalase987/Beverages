@@ -25,7 +25,21 @@ import zoboImg from "../../img/zobo6.jpeg";
 
 const otherDrinks = [
     {
-        name: "Bigi Apple",
+        id: 7,
+        brandName: "Fura Da Nono",
+      name: "Fura",
+      coverPhoto: furaImg,
+      image: fura4,
+      description: "Mouthwatering Perfection Starts With Originality In Taste. Fura Is Our Traditional Beverage With The Popular Yoghurt Signature Taste. This Drink Has A Sure Refreshing Taste Like None Other.Impress With Style When You Refresh With Fura Da Nono!",
+      brand: "Naija's Beverages",
+      currentPrice: 500,
+      formerPrice: 550,
+      similarDrinks: [fura2, fura3, fura1, fura5]
+    },
+    {
+        id: 1,
+        brandName: "Bigi Apple",
+        name: 'tropical',
         image: bigiapple,
         description: "Mouthwatering Perfection Starts With Originality In Taste. Bigi Cola Is Our Carbonated Drink With The Popular Cola Signature Taste. This Cola Drink Has A Sure Refreshing Taste Like None Other.Impress With Style When You Refresh With Mr. Cool!",
         brand: "Bigi",
@@ -34,7 +48,9 @@ const otherDrinks = [
         similarDrinks: [bigicola, bigitropical, bigilemon, bigiginger]
       },
     {
-        name: "Bigi Tropical",
+        id: 2,
+        brandName: "Bigi Tropical",
+        name: 'tropical',
         image: bigitropical,
         description: "Mouthwatering Perfection Starts With Originality In Taste. Bigi Cola Is Our Carbonated Drink With The Popular Cola Signature Taste. This Cola Drink Has A Sure Refreshing Taste Like None Other.Impress With Style When You Refresh With Mr. Cool!",
         brand: "Bigi",
@@ -43,7 +59,9 @@ const otherDrinks = [
         similarDrinks: [bigicola, bigiapple, bigilemon, bigiginger]
       },
     {
-        name: "Bigi Lemon",
+        id: 3,
+        brandName: "Bigi Lemon",
+        name: 'tropical',
         image: bigilemon,
         description: "Mouthwatering Perfection Starts With Originality In Taste. Bigi Cola Is Our Carbonated Drink With The Popular Cola Signature Taste. This Cola Drink Has A Sure Refreshing Taste Like None Other.Impress With Style When You Refresh With Mr. Cool!",
         brand: "Bigi",
@@ -52,7 +70,9 @@ const otherDrinks = [
         similarDrinks: [bigicola, bigiapple, bigitropical, bigiginger]
       },
     {
-        name: "Bigi Ginger",
+        id: 4,
+        brandName: "Bigi Ginger",
+        name: 'tropical',
         image: bigiginger,
         description: "Mouthwatering Perfection Starts With Originality In Taste. Bigi Cola Is Our Carbonated Drink With The Popular Cola Signature Taste. This Cola Drink Has A Sure Refreshing Taste Like None Other.Impress With Style When You Refresh With Mr. Cool!",
         brand: "Bigi",
